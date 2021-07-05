@@ -1,5 +1,6 @@
 package silver
 
+//셀프 넘버
 fun main() {
     val list = ArrayList<Int>()
     for (i in 1..10000)
