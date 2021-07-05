@@ -4,11 +4,9 @@ package silver
 fun main() {
     var count = 0
     val n = readLine()!!.toInt()
-    for (i in 1..n) {
-        if (isHanSu(i)) {
+    for (i in 1..n)
+        if (isHanSu(i))
             count++
-        }
-    }
     print(count)
 }
 
