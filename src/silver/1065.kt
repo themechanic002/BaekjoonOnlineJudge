@@ -19,8 +19,8 @@ fun isHanSu(n: Int): Boolean {
         val array = n.toString().map { it.code - '0'.code }.toMutableList()
         val gap = array[1] - array[0]
         var count = 0
-        while(array.size > 1){
-            if(array[1] - array[0] == gap)
+        while (array.size > 1) {
+            if (array[1] - array[0] == gap)
                 array.removeFirst()
             else return false
         }
