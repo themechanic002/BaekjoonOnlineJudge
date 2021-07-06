@@ -1,9 +1,8 @@
 package gold
 
-const val c = 1000000007
-
 //피보나치 수 6
 fun main() {
+    val c = 1000000007
     val n = readLine()!!.toInt()
     val fib = ArrayList<Int>()
     for (i in 0..n) {
@@ -14,5 +13,5 @@ fun main() {
         else
             fib.add(((fib.last() % c) + (fib[fib.lastIndex - 1] % c)) % c)
     }
-    print(fib[n])
+    println(fib[n])
 }
