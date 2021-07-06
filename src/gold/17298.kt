@@ -7,10 +7,11 @@ fun main() {
     while (arr.isNotEmpty()) {
         val target = arr.first()
         arr.removeFirst()
-        if (arr.all { it <= target })
+        val p = arr.find { it > target }
+        if(p == null)
             print(-1)
         else
-            print(arr.find { it > target })
+            print(p)
         print(" ")
     }
 }
