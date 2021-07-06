@@ -5,20 +5,7 @@ fun main() {
     readLine()
     var arr = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
 
-
-
     arr.map { one ->
         arr.find { arr.indexOf(it) > arr.indexOf(one) && it > one } ?: -1
-    }.toMutableList().forEach { print("" + it + " ") }
-
-    /*while (arr.isNotEmpty()) {
-        val target = arr.first()
-        arr.removeFirst()
-        val p = arr.find { it > target }
-        if (p == null)
-            print(-1)
-        else
-            print(p)
-        print(" ")
-    }*/
+    }.toMutableList().forEach { print("$it ") }
 }
