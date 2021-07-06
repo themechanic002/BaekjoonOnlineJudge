@@ -9,9 +9,8 @@ fun main() {
         arr.removeFirst()
         if (arr.all { it <= target })
             print(-1)
-        else {
+        else
             print(arr.find { it > target })
-        }
         print(" ")
     }
 }
