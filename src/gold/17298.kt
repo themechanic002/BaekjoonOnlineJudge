@@ -12,10 +12,13 @@ fun main() {
                 print(arr[i])
                 break
             } else if (i == arr.lastIndex && arr[i] <= target) {
-                print(-1)
+                print("-1")
                 break
             }
         }
-        print(" ")
+        if(arr.isEmpty())
+            print(-1)
+        else
+            print(" ")
     }
 }
