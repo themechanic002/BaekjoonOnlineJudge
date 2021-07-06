@@ -17,8 +17,7 @@ fun main() {
     stack.forEach {
         arr[it] = -1
     }
-    println(arr)
-
+    arr.forEach { print("$it ") }
 
     /*arr.map { one ->
         arr.find { arr.indexOf(it) > arr.indexOf(one) && it > one } ?: -1
