@@ -1,22 +1,22 @@
 package gold
 
+import java.util.*
+
 //오큰수
 //시간초과에러
 fun main() {
     readLine()
     var arr = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
 
-    val stack = ArrayList<Int>()
+    val stack = Stack<Int>()
     for (i in 0 until arr.size) {
         while (stack.isNotEmpty() && arr[stack.first()] < arr[i]) {
-            arr[stack.first()] = arr[i]
-            stack.removeFirst()
+            arr[stack.pop()] = arr[i]
         }
-        stack.add(i)
+        stack.push(i)
     }
-    stack.forEach {
-        arr[it] = -1
-    }
+    while (stack.isNotEmpty())
+        arr[stack.pop()] = -1
     arr.forEach { print("$it ") }
 
     /*arr.map { one ->
