@@ -8,7 +8,7 @@ fun main() {
         val target = arr.first()
         arr.removeFirst()
         val p = arr.find { it > target }
-        if(p == null)
+        if (p == null)
             print(-1)
         else
             print(p)
