@@ -1,6 +1,7 @@
 package gold
 
 //피보나치 수 6
+//이상하게 백준에서만 안됨. 코틀린으로 푼 사람 모두 틀림
 fun main() {
     val c = 1000000007
     val n = readLine()!!.toInt()
