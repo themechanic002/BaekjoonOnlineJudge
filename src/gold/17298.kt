@@ -16,7 +16,7 @@ fun main() {
                 break
             }
         }
-        if(arr.isEmpty())
+        if (arr.isEmpty())
             print(-1)
         else
             print(" ")
