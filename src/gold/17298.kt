@@ -9,7 +9,7 @@ fun main() {
         arr.find { arr.indexOf(it) > arr.indexOf(one) && it > one } ?: -1
     }.toMutableList()
 
-    for(i in arr) {
+    for (i in arr) {
         print(i)
         print(" ")
     }
