@@ -7,7 +7,7 @@ fun main() {
     while (arr.isNotEmpty()) {
         val target = arr.first()
         arr.removeFirst()
-        if(arr.all { it <= target })
+        if (arr.all { it <= target })
             print(-1)
         else {
             print(arr.find { it > target })
