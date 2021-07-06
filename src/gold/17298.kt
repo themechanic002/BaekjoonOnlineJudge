@@ -7,8 +7,8 @@ fun main() {
     var arr = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
 
     val stack = ArrayList<Int>()
-    for(i in 0 until arr.size){
-        while(stack.isNotEmpty() && arr[stack.first()] < arr[i]){
+    for (i in 0 until arr.size) {
+        while (stack.isNotEmpty() && arr[stack.first()] < arr[i]) {
             arr[stack.first()] = arr[i]
             stack.removeFirst()
         }
