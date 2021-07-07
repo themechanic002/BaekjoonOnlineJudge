@@ -1,15 +1,19 @@
 package gold
 
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 import java.util.*
 
 //오큰수
 //시간초과에러
 fun main() {
-    val n = readLine()!!.toInt()
-    val scanner = Scanner(System.`in`)
-    var arr = ArrayList<Int>()
-    for (i in 0 until n)
-        arr.add(scanner.nextInt())
+    val br = BufferedReader(InputStreamReader(System.`in`))
+    val bw = BufferedWriter(OutputStreamWriter(System.out))
+
+    val n = Integer.parseInt(br.readLine())
+    val arr = br.readLine().split(" ").map { it.toInt() }.toMutableList()
 
     //var arr = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
 
@@ -22,7 +26,8 @@ fun main() {
     }
     while (stack.isNotEmpty())
         arr[stack.pop()] = -1
-    arr.forEach { print("$it ") }
+    arr.forEach { bw.write("$it ") }
+    bw.close()
 
     /*arr.map { one ->
         arr.find { arr.indexOf(it) > arr.indexOf(one) && it > one } ?: -1
