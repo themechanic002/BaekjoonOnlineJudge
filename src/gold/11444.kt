@@ -1,18 +1,22 @@
 package gold
 
 //피보나치 수 6
-//이상하게 백준에서만 안됨. 코틀린으로 푼 사람 모두 틀림
+//행렬을 이용해야하지만 좀 더 고민이 필요할 거 같음.
+//미완성
 fun main() {
     val c = 1000000007
-    val n = readLine()!!.toInt()
-    val fib = ArrayList<Int>()
-    for (i in 0..n) {
+    val n = readLine()!!.toLong() % c.toLong()
+    val fib = ArrayList<Long>()
+    for (i in 0L..n) {
         if (fib.size == 0)
             fib.add(0)
         else if (fib.size == 1)
             fib.add(1)
-        else
+        else {
             fib.add(((fib.last() % c) + (fib[fib.lastIndex - 1] % c)) % c)
+            fib.removeFirst()
+        }
     }
-    println(fib[n])
+    print(fib.last())
+
 }

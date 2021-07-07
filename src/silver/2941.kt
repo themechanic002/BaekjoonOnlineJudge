@@ -7,7 +7,7 @@ fun main() {
     var count = 0
 
     croatia.forEach {
-        s.replace(it, "0")
+        s = s.replace(it, "0")
     }
     count += s.length
     print(count)
