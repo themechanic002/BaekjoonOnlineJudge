@@ -1,22 +1,33 @@
 package gold
 
-//검문
-//에러
-fun main() {
-    val n = readLine()!!.toInt()
-    val arr = ArrayList<Int>()
-    val answer = ArrayList<Int>()
-    for (i in 0 until n)
-        arr.add(i, readLine()!!.toInt())
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+import java.util.*
 
-    val sortedArr = arr.sorted().toIntArray()
-    for (i in 0..sortedArr.first()) {
-        var newArr = sortedArr.copyOf()
-        newArr = newArr.map { if(it - i <= 0) 1 else it - i }.toIntArray()
-        newArr.forEach { print("$it ") }
-        println()
-        if(newArr.all { newArr.last() % it == 0 })
-            answer.add(i)
+//검문
+//메모리초과
+fun main() {
+    val br = BufferedReader(InputStreamReader(System.`in`))
+    val bw = BufferedWriter(OutputStreamWriter(System.out))
+    val answer = PriorityQueue<Int>()
+    val n = Integer.parseInt(br.readLine())
+    val arr = ArrayList<Int>()
+    for (i in 0 until n)
+        arr.add(Integer.parseInt(br.readLine()))
+    arr.sort()
+
+    val min = arr.first()
+    for (i in 0..min - 2) {
+        val newArr = arr.map { it - i }
+        if (newArr.all { it % newArr.first() == 0 }) {
+            answer.offer(min - i)
+        }
     }
-    answer.forEach { print("$it ") }
+    while (answer.isNotEmpty())
+        bw.write(answer.poll().toString() + " ")
+    br.close()
+    bw.close()
+
 }
