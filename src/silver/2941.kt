@@ -7,13 +7,8 @@ fun main() {
     var count = 0
 
     croatia.forEach {
-        while (s.contains(it)) {
-            count++
-            s = s.replace(it, "")
-        }
+        s.replace(it, "0")
     }
-    s = s.replace("-", "")
-    s = s.replace("=", "")
     count += s.length
     print(count)
 }
