@@ -1,5 +1,6 @@
 package silver
 
+//피보나치 함수
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
