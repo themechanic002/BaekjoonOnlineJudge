@@ -9,22 +9,24 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
 
+    val arr = ArrayList<Int>()
+    for (i in 0..40) {
+        if (arr.size == 0)
+            arr.add(0)
+        else if (arr.size == 1)
+            arr.add(1)
+        else
+            arr.add(arr.last() + arr[arr.lastIndex - 1])
+    }
+
     val n = Integer.parseInt(br.readLine())
     for (i in 0 until n) {
         val next = Integer.parseInt(br.readLine())
         if (next == 0)
             bw.write("1 0\n")
         else
-            bw.write("${fib(next - 1)} ${fib(next)}\n")
+            bw.write("${arr[next - 1]} ${arr[next]}\n")
     }
     br.close()
     bw.close()
-}
-
-fun fib(n: Int): Int {
-    if (n == 0) {
-        return 0
-    } else if (n == 1) {
-        return 1
-    } else return fib(n - 1) + fib(n - 2)
 }
