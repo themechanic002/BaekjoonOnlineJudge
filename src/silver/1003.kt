@@ -13,7 +13,7 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
 
     val n = Integer.parseInt(br.readLine())
-    for(i in 0 until n){
+    for (i in 0 until n) {
         countZero = 0
         countOne = 0
         fib(Integer.parseInt(br.readLine()))
@@ -22,14 +22,13 @@ fun main() {
     br.close()
     bw.close()
 }
+
 fun fib(n: Int): Int {
-    if(n == 0){
+    if (n == 0) {
         countZero++
         return 0
-    }
-    else if(n == 1){
+    } else if (n == 1) {
         countOne++
         return 1
-    }
-    else return fib(n - 1) + fib(n - 2)
+    } else return fib(n - 1) + fib(n - 2)
 }
