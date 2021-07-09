@@ -20,23 +20,21 @@ fun main() {
                 '(' -> stack.push('(')
                 '[' -> stack.push('[')
                 ')' -> {
-                    if (stack.isEmpty() || stack.peek() != '(') {
-                        stack.push(')')
-                        bw.write("no\n")
-                        break
-                    } else stack.pop()
+                    if (stack.isNotEmpty() && stack.peek() == '(')
+                        stack.pop()
+                    else stack.push(')')
                 }
                 ']' -> {
-                    if (stack.isEmpty() || stack.peek() != '[') {
-                        stack.push(']')
-                        bw.write("no\n")
-                        break
-                    } else stack.pop()
+                    if (stack.isNotEmpty() && stack.peek() == '[')
+                        stack.pop()
+                    else stack.push(']')
                 }
             }
         }
         if (stack.isEmpty())
             bw.write("yes\n")
+        else
+            bw.write("no\n")
     }
     bw.close()
 }
