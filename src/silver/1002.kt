@@ -19,12 +19,12 @@ fun main() {
         var small: Pair<Double, Double>
         var bigR: Double
         var smallR: Double
-        if(line[2] >= line[5]){
+        if (line[2] >= line[5]) {
             big = Pair(line[0], line[1])
             small = Pair(line[3], line[4])
             bigR = line[2]
             smallR = line[5]
-        }else{
+        } else {
             big = Pair(line[3], line[4])
             small = Pair(line[0], line[1])
             bigR = line[5]
@@ -33,14 +33,14 @@ fun main() {
         val dist = sqrt((big.first - small.first).pow(2) + (big.second - small.second).pow(2))
         val rads = bigR + smallR
 
-        if(rads < dist)
+        if (rads < dist)
             bw.write("0\n")
-        else if(rads == dist)
+        else if (rads == dist)
             bw.write("1\n")
-        else{
-            if(bigR - smallR < dist)
+        else {
+            if (bigR - smallR < dist)
                 bw.write("2\n")
-            else if(bigR - smallR > dist)
+            else if (bigR - smallR > dist)
                 bw.write("0\n")
             else
                 bw.write("1\n")
