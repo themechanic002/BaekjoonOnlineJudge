@@ -4,7 +4,7 @@ package silver
 fun main() {
     val n = readLine()!!.toInt()
     val arr = ArrayList<Int>()
-    for(i in 0 until n)
+    for (i in 0 until n)
         arr.add(readLine()!!.toInt())
     arr.sorted().forEach { println(it) }
 }
