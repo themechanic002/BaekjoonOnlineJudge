@@ -15,7 +15,7 @@ fun main() {
         val stack = Stack<Char>()
         val line = br.readLine().toString()
         if (line == ".") break
-        for(i in line){
+        for (i in line) {
             when (i) {
                 '(' -> stack.push('(')
                 '[' -> stack.push('[')
@@ -24,20 +24,18 @@ fun main() {
                         stack.push(')')
                         bw.write("no\n")
                         break
-                    }
-                    else stack.pop()
+                    } else stack.pop()
                 }
                 ']' -> {
                     if (stack.isEmpty() || stack.peek() != '[') {
                         stack.push(']')
                         bw.write("no\n")
                         break
-                    }
-                    else stack.pop()
+                    } else stack.pop()
                 }
             }
         }
-        if(stack.isEmpty())
+        if (stack.isEmpty())
             bw.write("yes\n")
     }
     bw.close()
