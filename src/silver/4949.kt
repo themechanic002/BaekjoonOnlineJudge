@@ -10,33 +10,35 @@ import java.util.*
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val stack = Stack<Char>()
 
     while (true) {
+        val stack = Stack<Char>()
         val line = br.readLine().toString()
         if (line == ".") break
-        line.forEach {
-            when (it) {
+        for(i in line){
+            when (i) {
                 '(' -> stack.push('(')
                 '[' -> stack.push('[')
                 ')' -> {
-                    if (stack.isEmpty() || stack.pop() != '(') {
+                    if (stack.isEmpty() || stack.peek() != '(') {
+                        stack.push(')')
                         bw.write("no\n")
-                        return@forEach
+                        break
                     }
+                    else stack.pop()
                 }
                 ']' -> {
-                    if (stack.isEmpty() || stack.pop() != '[') {
+                    if (stack.isEmpty() || stack.peek() != '[') {
+                        stack.push(']')
                         bw.write("no\n")
-                        return@forEach
+                        break
                     }
+                    else stack.pop()
                 }
             }
         }
-        if (stack.isEmpty())
+        if(stack.isEmpty())
             bw.write("yes\n")
-        else
-            bw.write("no\n")
     }
     bw.close()
 }
