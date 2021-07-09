@@ -33,7 +33,9 @@ fun main() {
         val dist = sqrt((big.first - small.first).pow(2) + (big.second - small.second).pow(2))
         val rads = bigR + smallR
 
-        if (rads < dist)
+        if (dist == 0.0 && bigR == smallR)
+            bw.write("-1\n")
+        else if (rads < dist)
             bw.write("0\n")
         else if (rads == dist)
             bw.write("1\n")
