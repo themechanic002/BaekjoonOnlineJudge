@@ -13,4 +13,5 @@ fun main() {
     val n = Integer.parseInt(br.readLine())
     val divisors = br.readLine().toString().split(" ").map { it.toInt() }.sorted()
     bw.write(divisors.first() * divisors.last())
+    bw.close()
 }
