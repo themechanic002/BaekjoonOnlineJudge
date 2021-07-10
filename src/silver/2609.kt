@@ -14,7 +14,8 @@ fun main() {
     bw.write("${gcdVal}\n")
     bw.write("${arr[0] * arr[1] / gcdVal}")
 }
-fun gcd(a: Int, b: Int): Int{
+
+fun gcd(a: Int, b: Int): Int {
     var a2 = a
     var b2 = b
     while (b2 !== 0) {
