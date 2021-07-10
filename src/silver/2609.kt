@@ -13,6 +13,7 @@ fun main() {
     val gcdVal = gcd(arr[0], arr[1])
     bw.write("${gcdVal}\n")
     bw.write("${arr[0] * arr[1] / gcdVal}")
+    bw.close()
 }
 
 fun gcd(a: Int, b: Int): Int {
