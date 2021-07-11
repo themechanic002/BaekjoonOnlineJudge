@@ -23,9 +23,8 @@ fun main() {
 
 fun dfs(n: Int, m: Int, depth: Int) {
     if (depth == m) {
-        for (i in arr) {
+        for (i in arr)
             bw.write("$i ")
-        }
         bw.write("\n")
         return
     }
