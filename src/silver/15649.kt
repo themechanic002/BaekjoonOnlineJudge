@@ -15,7 +15,9 @@ fun main() {
     val set = HashSet<Pair<Int, Int>>()
     for (i in 1..n) {
         for (j in 1..n) {
-
+            set.add(Pair(i, j))
         }
     }
+    set.toList().sortedWith(compareBy({ it.first }, { it.second })).forEach { bw.write("${it.first} ${it.second}\n") }
+    bw.close()
 }
