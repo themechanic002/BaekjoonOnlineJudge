@@ -28,12 +28,11 @@ fun dfs(n: Int, m: Int, depth: Int) {
         bw.write("\n")
         return
     }
-    for (i in 0 until n) {
+    for (i in 0 until n)
         if (!visit[i]) {
             visit[i] = true
             arr[depth] = i + 1
             dfs(n, m, depth + 1)
             visit[i] = false
         }
-    }
 }
