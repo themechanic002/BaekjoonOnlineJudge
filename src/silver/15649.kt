@@ -6,18 +6,35 @@ import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
 //N과 M (1)
+lateinit var arr: Array<Int>
+lateinit var visit: Array<Boolean>
+val br = BufferedReader(InputStreamReader(System.`in`))
+val bw = BufferedWriter(OutputStreamWriter(System.out))
+
 fun main() {
-    val br = BufferedReader(InputStreamReader(System.`in`))
-    val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val arr = br.readLine().split(" ").map { it.toInt() }
-    val n = arr[0]
-    val m = arr[1]
-    val set = HashSet<Pair<Int, Int>>()
-    for (i in 1..n) {
-        for (j in 1..n) {
-            set.add(Pair(i, j))
+    val line = br.readLine().split(" ").map { it.toInt() }
+    val n = line[0]
+    val m = line[1]
+    arr = Array(m) { 0 }
+    visit = Array(n) { false }
+    dfs(n, m, 0)
+    bw.close()
+}
+
+fun dfs(n: Int, m: Int, depth: Int) {
+    if (depth == m) {
+        for (i in arr) {
+            bw.write("$i ")
+        }
+        bw.write("\n")
+        return
+    }
+    for (i in 0 until n) {
+        if (!visit[i]) {
+            visit[i] = true
+            arr[depth] = i + 1
+            dfs(n, m, depth + 1)
+            visit[i] = false
         }
     }
-    set.toList().sortedWith(compareBy({ it.first }, { it.second })).forEach { bw.write("${it.first} ${it.second}\n") }
-    bw.close()
 }
