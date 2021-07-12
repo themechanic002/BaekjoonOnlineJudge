@@ -10,7 +10,7 @@ import java.util.*
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val pq = PriorityQueue<Int>()
+    val pq = PriorityQueue<Int>(Comparator.reverseOrder())
     val n = Integer.parseInt(br.readLine())
     for (i in 0 until n) {
         val next = Integer.parseInt(br.readLine())
@@ -21,4 +21,5 @@ fun main() {
                 bw.write("${pq.poll()}\n")
         } else pq.offer(next)
     }
+    bw.close()
 }
