@@ -32,7 +32,8 @@ fun main() {
                         bw.write("${pqMinus.poll()}\n")
                 }
             }
-        } else if (next > 0)
+        }
+        else if (next > 0)
             pqPlus.offer(next)
         else
             pqMinus.offer(next)
