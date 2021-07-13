@@ -11,10 +11,10 @@ import kotlin.math.abs
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val pq = PriorityQueue<Int>()
+    val pq = PriorityQueue<Int>(Comparator.comparing { abs(it) })
     val n = Integer.parseInt(br.readLine())
     for (i in 0 until n) {
-        val next = abs(Integer.parseInt(br.readLine()))
+        val next = Integer.parseInt(br.readLine())
         if (next == 0) {
             if (pq.isEmpty())
                 bw.write("0\n")
