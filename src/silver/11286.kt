@@ -5,6 +5,7 @@ import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.util.*
+import kotlin.math.abs
 
 //절댓값 힙
 fun main() {
@@ -12,5 +13,14 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val pq = PriorityQueue<Int>()
     val n = Integer.parseInt(br.readLine())
-
+    for (i in 0 until n) {
+        val next = abs(Integer.parseInt(br.readLine()))
+        if (next == 0) {
+            if (pq.isEmpty())
+                bw.write("0\n")
+            else
+                bw.write("${pq.poll()}\n")
+        } else pq.offer(next)
+    }
+    bw.close()
 }
