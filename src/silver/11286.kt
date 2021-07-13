@@ -20,20 +20,19 @@ fun main() {
         if (next == 0) {
             if (pqPlus.isEmpty() && pqMinus.isEmpty())
                 bw.write("0\n")
-            else{
-                if(pqPlus.isEmpty())
+            else {
+                if (pqPlus.isEmpty())
                     bw.write("${pqMinus.poll()}\n")
-                else if(pqMinus.isEmpty())
+                else if (pqMinus.isEmpty())
                     bw.write("${pqPlus.poll()}\n")
-                else{
-                    if(abs(pqPlus.peek()) < abs(pqMinus.peek()))
+                else {
+                    if (abs(pqPlus.peek()) < abs(pqMinus.peek()))
                         bw.write("${pqPlus.poll()}\n")
                     else
                         bw.write("${pqMinus.poll()}\n")
                 }
             }
-        }
-        else if(next > 0)
+        } else if (next > 0)
             pqPlus.offer(next)
         else
             pqMinus.offer(next)
