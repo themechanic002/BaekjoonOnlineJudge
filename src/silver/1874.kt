@@ -18,7 +18,7 @@ fun main() {
     for (i in 1..n) {
         val next = Integer.parseInt(br.readLine())
         while (true) {
-            if(stack.peek() > n)
+            if (stack.peek() > n)
                 break
             else if (stack.peek() < next) {
                 stack.push(++count)
@@ -33,7 +33,7 @@ fun main() {
             }
         }
     }
-    if(stack.peek() != 0){
+    if (stack.peek() != 0) {
         answer.clear()
         answer.add("NO")
     }
