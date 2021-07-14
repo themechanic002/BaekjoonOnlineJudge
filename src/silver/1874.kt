@@ -12,23 +12,31 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     val stack = Stack<Int>()
+    val answer = ArrayList<String>()
     stack.push(0)
     var count = 0
     for (i in 1..n) {
         val next = Integer.parseInt(br.readLine())
         while (true) {
-            if (stack.peek() < next) {
+            if(stack.peek() > n)
+                break
+            else if (stack.peek() < next) {
                 stack.push(++count)
-                bw.write("+\n")
+                answer.add("+")
             } else if (stack.peek() > next) {
                 stack.pop()
-                bw.write("-\n")
+                answer.add("-")
             } else {
                 stack.pop()
-                bw.write("-\n")
+                answer.add("-")
                 break
             }
         }
     }
+    if(stack.peek() != 0){
+        answer.clear()
+        answer.add("NO")
+    }
+    answer.forEach { bw.write("$it\n") }
     bw.close()
 }
