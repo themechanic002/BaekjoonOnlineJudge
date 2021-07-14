@@ -14,18 +14,16 @@ fun main() {
     val stack = Stack<Int>()
     stack.push(0)
     var count = 0
-    for(i in 1..n){
+    for (i in 1..n) {
         val next = Integer.parseInt(br.readLine())
-        while(true){
-            if(stack.peek() < next){
+        while (true) {
+            if (stack.peek() < next) {
                 stack.push(++count)
                 bw.write("+\n")
-            }
-            else if(stack.peek() > next){
+            } else if (stack.peek() > next) {
                 stack.pop()
                 bw.write("-\n")
-            }
-            else{
+            } else {
                 stack.pop()
                 bw.write("-\n")
                 break
