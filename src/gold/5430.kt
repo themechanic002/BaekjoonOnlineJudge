@@ -16,7 +16,8 @@ fun main() {
         val arrN = Integer.parseInt(br.readLine())
         val arr = ArrayDeque<Int>()
         var isError = false
-        br.readLine().toString().substring(1, arrN * 2).split(",").map { it.toInt() }.forEach { arr.add(it) }
+        if (arrN != 0)
+            br.readLine().toString().substring(1, arrN * 2).split(",").map { it.toInt() }.forEach { arr.add(it) }
         for (i in 0 until p.size) {
             when (p[i]) {
                 'R' -> {
