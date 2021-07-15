@@ -12,7 +12,7 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     first@ for (i in 0 until n) {
-        val p = br.readLine().toString().toCharArray()
+        val p = br.readLine().toString().replace("RR", "").toCharArray()
         val arrN = Integer.parseInt(br.readLine())
         var arr = ArrayDeque<Int>()
         var isError = false
@@ -29,7 +29,7 @@ fun main() {
                         arr = newArr
                     }
                 }
-                'D' -> {
+                else -> {
                     if (arr.isEmpty()) {
                         isError = true
                         break
