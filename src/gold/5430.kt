@@ -16,6 +16,8 @@ fun main() {
         val arrN = Integer.parseInt(br.readLine())
         var arr = ArrayDeque<Int>()
         var isError = false
+        //R 나올때마다 굳이 모든 배열을 리버스할 필요 없이 Deque에서 앞에꺼를 빼냐 뒤에꺼를 빼냐만 결정하면 됨.
+        //그러면 배열을 뒤집어서 맨 앞에 원소를 빼내는 것과 동일함
         var isNotReversed = true
         val next = br.readLine().toString()
         if (arrN != 0)
