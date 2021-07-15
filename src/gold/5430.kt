@@ -40,13 +40,19 @@ fun main() {
         else {
             if (isNotReversed) {
                 bw.write("[")
-                while (arr.isNotEmpty())
+                while (arr.isNotEmpty()){
                     bw.write("${arr.pollFirst()}")
+                    if(arr.size > 0)
+                        bw.write(", ")
+                }
                 bw.write("]\n")
             } else {
                 bw.write("[")
-                while (arr.isNotEmpty())
+                while (arr.isNotEmpty()) {
                     bw.write("${arr.pollLast()}")
+                    if(arr.size > 0)
+                        bw.write(", ")
+                }
                 bw.write("]\n")
             }
         }
