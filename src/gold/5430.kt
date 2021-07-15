@@ -16,29 +16,40 @@ fun main() {
         val arrN = Integer.parseInt(br.readLine())
         var arr = ArrayDeque<Int>()
         var isError = false
+        var isNotReversed = true
         val next = br.readLine().toString()
         if (arrN != 0)
             next.substring(1, arrN * 2).split(",").map { it.toInt() }.forEach { arr.add(it) }
-        for (i in 0 until p.size) {
-            when (p[i]) {
-                'R' -> {
-                    if (!arr.isEmpty()) {
-                        val newArr = ArrayDeque<Int>()
-                        while (arr.isNotEmpty())
-                            newArr.offerLast(arr.pollLast())
-                        arr = newArr
-                    }
-                }
-                else -> {
+        for (element in p) {
+            when (element) {
+                'R' -> isNotReversed = !isNotReversed
+                'D' -> {
                     if (arr.isEmpty()) {
                         isError = true
                         break
-                    } else arr.pollFirst()
+                    } else {
+                        //원래 상태
+                        if (isNotReversed) arr.pollFirst()
+                        //뒤집어진 상태
+                        else arr.pollLast()
+                    }
                 }
             }
         }
         if (isError) bw.write("error\n")
-        else bw.write("${arr}\n")
+        else {
+            if (isNotReversed) {
+                bw.write("[")
+                while (arr.isNotEmpty())
+                    bw.write("${arr.pollFirst()}")
+                bw.write("]\n")
+            } else {
+                bw.write("[")
+                while (arr.isNotEmpty())
+                    bw.write("${arr.pollLast()}")
+                bw.write("]\n")
+            }
+        }
     }
     bw.close()
 }
