@@ -33,9 +33,7 @@ fun main() {
                     if (arr.isEmpty()) {
                         isError = true
                         break
-                    } else {
-                        arr.pollFirst()
-                    }
+                    } else arr.pollFirst()
                 }
             }
         }
