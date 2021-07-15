@@ -12,14 +12,14 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     first@ for (i in 0 until n) {
-        val p = br.readLine().toString().replace("RR", "").toCharArray()
+        val p = br.readLine().toString().toCharArray()
         val arrN = Integer.parseInt(br.readLine())
         var arr = ArrayDeque<Int>()
         var isError = false
         var isNotReversed = true
         val next = br.readLine().toString()
         if (arrN != 0)
-            next.substring(1, arrN * 2).split(",").map { it.toInt() }.forEach { arr.add(it) }
+            next.substring(1, next.lastIndex).split(",").map { it.toInt() }.forEach { arr.add(it) }
         for (element in p) {
             when (element) {
                 'R' -> isNotReversed = !isNotReversed
@@ -38,23 +38,21 @@ fun main() {
         }
         if (isError) bw.write("error\n")
         else {
+            bw.write("[")
             if (isNotReversed) {
-                bw.write("[")
                 while (arr.isNotEmpty()) {
                     bw.write("${arr.pollFirst()}")
                     if (arr.size > 0)
-                        bw.write(", ")
+                        bw.write(",")
                 }
-                bw.write("]\n")
             } else {
-                bw.write("[")
                 while (arr.isNotEmpty()) {
                     bw.write("${arr.pollLast()}")
                     if (arr.size > 0)
-                        bw.write(", ")
+                        bw.write(",")
                 }
-                bw.write("]\n")
             }
+            bw.write("]\n")
         }
     }
     bw.close()
