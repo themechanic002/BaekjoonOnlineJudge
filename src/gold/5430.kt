@@ -14,18 +14,19 @@ fun main() {
     first@ for (i in 0 until n) {
         val p = br.readLine().toString().toCharArray()
         val arrN = Integer.parseInt(br.readLine())
-        val arr = ArrayDeque<Int>()
+        var arr = ArrayDeque<Int>()
         var isError = false
+        val next = br.readLine().toString()
         if (arrN != 0)
-            br.readLine().toString().substring(1, arrN * 2).split(",").map { it.toInt() }.forEach { arr.add(it) }
+            next.substring(1, arrN * 2).split(",").map { it.toInt() }.forEach { arr.add(it) }
         for (i in 0 until p.size) {
             when (p[i]) {
                 'R' -> {
                     if (!arr.isEmpty()) {
                         val newArr = ArrayDeque<Int>()
                         while (arr.isNotEmpty())
-                            newArr.add(arr.removeLast())
-                        arr.addAll(newArr)
+                            newArr.offerLast(arr.pollLast())
+                        arr = newArr
                     }
                 }
                 'D' -> {
@@ -33,7 +34,7 @@ fun main() {
                         isError = true
                         break
                     } else {
-                        arr.removeFirst()
+                        arr.pollFirst()
                     }
                 }
             }
