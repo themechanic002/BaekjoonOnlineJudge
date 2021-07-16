@@ -16,17 +16,18 @@ fun main() {
         val n = tempArr[0]
         val m = tempArr[1]
         val queue = LinkedList<IntArray>()
-        br.readLine().toString().split(" ").map { it.toInt() }.forEachIndexed { index, i -> intArrayOf(index, i) }
+        br.readLine().toString().split(" ").map { it.toInt() }.forEachIndexed { index, value -> queue.offer(intArrayOf(index, value)) }
         var count = 0
         while (true) {
             val point = queue.poll()
-            if (queue.all { point[1] >= it[1] }) {
+            if (queue.isEmpty() || queue.all { point[1] >= it[1] }) {
                 count++
-                if (point[1] == m) {
+                if (point[0] == m) {
                     bw.write("$count\n")
                     break
                 }
             } else queue.offer(point)
         }
     }
+    bw.close()
 }
