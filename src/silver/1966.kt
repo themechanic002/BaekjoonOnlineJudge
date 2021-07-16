@@ -15,11 +15,19 @@ fun main() {
         val tempArr = br.readLine().toString().split(" ").map { it.toInt() }
         val n = tempArr[0]
         val m = tempArr[1]
-        val queue = LinkedList<Int>()
-        br.readLine().toString().split(" ").map { it.toInt() }.forEach { queue.offer(it) }
-
-
-
-
+        val queue = LinkedList<IntArray>()
+        br.readLine().toString().split(" ").map { it.toInt() }.forEachIndexed { index, i -> intArrayOf(index, i) }
+        var count = 0
+        while(true){
+            val point = queue.poll()
+            if(queue.all { point[1] >= it[1] }){
+                count++
+                if(point[1] == m) {
+                    bw.write("$count\n")
+                    break
+                }
+            }
+            else queue.offer(point)
+        }
     }
 }
