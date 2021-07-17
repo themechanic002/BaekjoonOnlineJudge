@@ -18,7 +18,25 @@ fun main() {
             dq.addLast(order.replace("push ", "").toInt())
         else{
             when(order){
-                "front" -> bw.write("${dq}")
+                "front" -> {
+                    if(dq.isEmpty()) bw.write("-1")
+                    else bw.write("${dq.first()}")
+                }
+                "back" -> {
+                    if(dq.isEmpty()) bw.write("-1")
+                    else bw.write("${dq.last()}")
+                }
+                "empty" -> {
+                    if(dq.isEmpty()) bw.write("1")
+                    else bw.write("0")
+                }
+                "size" -> {
+                    bw.write("${dq.size}")
+                }
+                "pop" -> {
+                    if(dq.isEmpty()) bw.write("-1")
+                    else bw.write("${dq.removeFirst()}")
+                }
             }
         }
     }
