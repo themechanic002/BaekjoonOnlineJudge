@@ -11,6 +11,7 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     for(i in 0 until n){
+        val order = br.readLine().toString()
 
     }
 }
