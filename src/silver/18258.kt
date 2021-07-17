@@ -12,29 +12,29 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     val dq = ArrayDeque<Int>()
-    for(i in 0 until n){
+    for (i in 0 until n) {
         val order = br.readLine().toString()
-        if(order.contains("push"))
+        if (order.contains("push"))
             dq.addLast(order.replace("push ", "").toInt())
-        else{
-            when(order){
+        else {
+            when (order) {
                 "front" -> {
-                    if(dq.isEmpty()) bw.write("-1")
+                    if (dq.isEmpty()) bw.write("-1")
                     else bw.write("${dq.first()}")
                 }
                 "back" -> {
-                    if(dq.isEmpty()) bw.write("-1")
+                    if (dq.isEmpty()) bw.write("-1")
                     else bw.write("${dq.last()}")
                 }
                 "empty" -> {
-                    if(dq.isEmpty()) bw.write("1")
+                    if (dq.isEmpty()) bw.write("1")
                     else bw.write("0")
                 }
                 "size" -> {
                     bw.write("${dq.size}")
                 }
                 "pop" -> {
-                    if(dq.isEmpty()) bw.write("-1")
+                    if (dq.isEmpty()) bw.write("-1")
                     else bw.write("${dq.removeFirst()}")
                 }
             }
