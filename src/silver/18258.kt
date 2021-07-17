@@ -40,4 +40,5 @@ fun main() {
             }
         }
     }
+    bw.close()
 }
