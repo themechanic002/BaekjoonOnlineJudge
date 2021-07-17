@@ -19,23 +19,21 @@ fun main() {
         else {
             when (order) {
                 "front" -> {
-                    if (dq.isEmpty()) bw.write("-1")
-                    else bw.write("${dq.first()}")
+                    if (dq.isEmpty()) bw.write("-1\n")
+                    else bw.write("${dq.first()}\n")
                 }
                 "back" -> {
-                    if (dq.isEmpty()) bw.write("-1")
-                    else bw.write("${dq.last()}")
+                    if (dq.isEmpty()) bw.write("-1\n")
+                    else bw.write("${dq.last()}\n")
                 }
                 "empty" -> {
-                    if (dq.isEmpty()) bw.write("1")
-                    else bw.write("0")
+                    if (dq.isEmpty()) bw.write("1\n")
+                    else bw.write("0\n")
                 }
-                "size" -> {
-                    bw.write("${dq.size}")
-                }
+                "size" -> bw.write("${dq.size}\n")
                 "pop" -> {
-                    if (dq.isEmpty()) bw.write("-1")
-                    else bw.write("${dq.removeFirst()}")
+                    if (dq.isEmpty()) bw.write("-1\n")
+                    else bw.write("${dq.removeFirst()}\n")
                 }
             }
         }
