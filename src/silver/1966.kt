@@ -13,10 +13,10 @@ fun main() {
     val testNum = Integer.parseInt(br.readLine())
     for (i in 0 until testNum) {
         val tempArr = br.readLine().toString().split(" ").map { it.toInt() }
-        val n = tempArr[0]
         val m = tempArr[1]
         val queue = LinkedList<IntArray>()
-        br.readLine().toString().split(" ").map { it.toInt() }.forEachIndexed { index, value -> queue.offer(intArrayOf(index, value)) }
+        br.readLine().toString().split(" ").map { it.toInt() }
+            .forEachIndexed { index, value -> queue.offer(intArrayOf(index, value)) }
         var count = 0
         while (true) {
             val point = queue.poll()
