@@ -11,9 +11,9 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     val dq = ArrayDeque<Int>()
-    for(i in 1 .. n)
+    for (i in 1..n)
         dq.addLast(i)
-    while(dq.size != 1){
+    while (dq.size != 1) {
         dq.removeFirst()
         dq.addLast(dq.removeFirst())
     }
