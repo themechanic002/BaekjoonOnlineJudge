@@ -17,6 +17,6 @@ fun main() {
         dq.removeFirst()
         dq.addLast(dq.removeFirst())
     }
-    bw.write(dq.last())
+    bw.write("${dq.last()}\n")
     bw.close()
 }
