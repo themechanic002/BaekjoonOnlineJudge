@@ -13,8 +13,7 @@ fun main() {
     val n = Integer.parseInt(br.readLine())
     val stack = Stack<Int>()
     for(i in 0 until n){
-        val num = Integer.parseInt(br.readLine())
-        when(num){
+        when(val num = Integer.parseInt(br.readLine())){
             0 -> stack.pop()
             else -> stack.add(num)
         }
