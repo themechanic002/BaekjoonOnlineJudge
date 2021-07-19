@@ -11,8 +11,7 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val stack = Stack<Int>()
-    val n = Integer.parseInt(br.readLine())
-    for (i in 0 until n)
+    for (i in 0 until Integer.parseInt(br.readLine()))
         when (val num = Integer.parseInt(br.readLine())) {
             0 -> stack.pop()
             else -> stack.add(num)
