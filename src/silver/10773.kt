@@ -18,6 +18,6 @@ fun main() {
             else -> stack.add(num)
         }
     }
-    bw.write(stack.sum())
+    bw.write("${stack.sum()}")
     bw.close()
 }
