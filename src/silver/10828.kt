@@ -14,7 +14,10 @@ fun main() {
     for(i in 0 until Integer.parseInt(br.readLine())){
         val order = br.readLine().toString()
         if(order.contains("push "))
+            stack.add(order.replace("push ", "").toInt())
+        else{
 
+        }
 
     }
 }
