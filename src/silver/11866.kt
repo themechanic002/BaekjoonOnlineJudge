@@ -16,7 +16,7 @@ fun main() {
     for(i in 1 .. n)
         dq.add(i)
     while(dq.isNotEmpty()){
-        for(i in 0 until k)
+        for(i in 1 until k)
             dq.addLast(dq.removeFirst())
         dq.removeFirst()
     }
