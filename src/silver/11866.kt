@@ -16,11 +16,11 @@ fun main() {
     val answer = ArrayList<Int>()
     for (i in 1..n)
         dq.add(i)
-    while (dq.isNotEmpty()) {
+    while (dq.isNotEmpty())
         for (i in 1 until k)
             dq.addLast(dq.removeFirst())
         answer.add(dq.removeFirst())
-    }
+
     bw.write("<")
     answer.forEach {
         if (it == answer.last())
