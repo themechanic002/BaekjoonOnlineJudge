@@ -16,8 +16,22 @@ fun main() {
         if(order.contains("push "))
             stack.add(order.replace("push ", "").toInt())
         else{
-
+            when(order){
+                "pop" -> {
+                    if(stack.isEmpty()) bw.write("-1\n")
+                    else bw.write("${stack.pop()}\n")
+                }
+                "size" -> bw.write("${stack.size}\n")
+                "empty" -> {
+                    if(stack.isEmpty()) bw.write("1\n")
+                    else bw.write("0\n")
+                }
+                "top" -> {
+                    if(stack.isEmpty()) bw.write("-1\n")
+                    else bw.write("${stack.peek()}\n")
+                }
+            }
         }
-
     }
+    bw.close()
 }
