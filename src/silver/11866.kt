@@ -29,4 +29,5 @@ fun main() {
             bw.write("$it, ")
     }
     bw.write(">")
+    bw.close()
 }
