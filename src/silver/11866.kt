@@ -21,7 +21,7 @@ fun main() {
             dq.addLast(dq.removeFirst())
         if (dq.size == 1)
             bw.write("${dq.removeFirst()}")
-        bw.write("${dq.removeFirst()}, ")
+        else bw.write("${dq.removeFirst()}, ")
     }
     bw.write(">")
     bw.close()
