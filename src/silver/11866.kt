@@ -13,7 +13,6 @@ fun main() {
     val n = temp[0]
     val k = temp[1]
     val dq = ArrayDeque<Int>()
-    val answer = ArrayList<Int>()
     for (i in 1..n)
         dq.add(i)
     bw.write("<")
