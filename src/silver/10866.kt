@@ -11,35 +11,35 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     val dq = ArrayDeque<Int>()
-    for(i in 0 until n){
+    for (i in 0 until n) {
         val order = br.readLine().toString()
-        if(order.contains("push_back "))
+        if (order.contains("push_back "))
             dq.addLast(order.replace("push_back ", "").toInt())
-        else if(order.contains("push_front "))
+        else if (order.contains("push_front "))
             dq.addLast(order.replace("push_front ", "").toInt())
         else
-            when(order){
+            when (order) {
                 "pop_front" -> {
-                    if(dq.isEmpty()) bw.write("-1\n")
+                    if (dq.isEmpty()) bw.write("-1\n")
                     else bw.write("${dq.removeFirst()}\n")
                 }
                 "pop_back" -> {
-                    if(dq.isEmpty()) bw.write("-1\n")
+                    if (dq.isEmpty()) bw.write("-1\n")
                     else bw.write("${dq.removeLast()}\n")
                 }
                 "size" -> {
                     bw.write("${dq.size}\n")
                 }
                 "empty" -> {
-                    if(dq.isEmpty()) bw.write("1\n")
+                    if (dq.isEmpty()) bw.write("1\n")
                     else bw.write("0\n")
                 }
                 "front" -> {
-                    if(dq.isEmpty()) bw.write("-1\n")
+                    if (dq.isEmpty()) bw.write("-1\n")
                     else bw.write("${dq.first()}\n")
                 }
                 "back" -> {
-                    if(dq.isEmpty()) bw.write("-1\n")
+                    if (dq.isEmpty()) bw.write("-1\n")
                     else bw.write("${dq.last()}\n")
                 }
             }
