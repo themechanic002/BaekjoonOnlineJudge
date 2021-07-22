@@ -34,14 +34,15 @@ fun main() {
                     if(dq.isEmpty()) bw.write("1\n")
                     else bw.write("0\n")
                 }
-                "pop_back" -> {
+                "front" -> {
                     if(dq.isEmpty()) bw.write("-1\n")
                     else bw.write("${dq.first()}\n")
                 }
-                "pop_back" -> {
+                "back" -> {
                     if(dq.isEmpty()) bw.write("-1\n")
                     else bw.write("${dq.last()}\n")
                 }
             }
     }
+    bw.close()
 }
