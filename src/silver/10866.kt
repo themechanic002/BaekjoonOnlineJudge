@@ -16,7 +16,7 @@ fun main() {
         if (order.contains("push_back "))
             dq.addLast(order.replace("push_back ", "").toInt())
         else if (order.contains("push_front "))
-            dq.addLast(order.replace("push_front ", "").toInt())
+            dq.addFirst(order.replace("push_front ", "").toInt())
         else
             when (order) {
                 "pop_front" -> {
