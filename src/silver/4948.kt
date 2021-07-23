@@ -9,22 +9,22 @@ import java.io.OutputStreamWriter
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    while(true){
+    while (true) {
         var count = 0
         val next = Integer.parseInt(br.readLine())
-        if(next == 0)
+        if (next == 0)
             break
-        else{
+        else {
             val arr = ArrayList<Int>()
-            for(i in next + 1 .. next * 2) {
+            for (i in next + 1..next * 2) {
                 var prime = true
-                for(j in 2 .. next){
-                    if(i % j == 0){
+                for (j in 2..next) {
+                    if (i % j == 0) {
                         prime = false
                         break
                     }
                 }
-                if(prime) arr.add(i)
+                if (prime) arr.add(i)
             }
             bw.write("${arr.size}\n")
         }
