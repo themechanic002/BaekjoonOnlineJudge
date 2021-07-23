@@ -11,16 +11,13 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
 
     val prime: Array<Boolean> = Array(246913) { true }
-    prime[0] = false
-    prime[1] = false
     for (i in 2..246912)
         if (prime[i])
             for (j in 2 * i..246912 step i) prime[j] = false
 
     while (true) {
         val next = Integer.parseInt(br.readLine())
-        if (next == 0)
-            break
+        if (next == 0) break
         else {
             var count = 0
             for (i in next + 1..next * 2)
