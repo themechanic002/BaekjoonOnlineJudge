@@ -14,7 +14,7 @@ fun main() {
         if (next == 0)
             break
         else {
-            val arr = ArrayList<Int>()
+            var count = 0
             for (i in next + 1..next * 2) {
                 var prime = true
                 for (j in 2..next) {
@@ -23,9 +23,9 @@ fun main() {
                         break
                     }
                 }
-                if (prime) arr.add(i)
+                if (prime) count++
             }
-            bw.write("${arr.size}\n")
+            bw.write("${count}\n")
         }
     }
     bw.close()
