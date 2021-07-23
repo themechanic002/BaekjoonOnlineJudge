@@ -13,10 +13,9 @@ fun main() {
     val prime: Array<Boolean> = Array(246913) { true }
     prime[0] = false
     prime[1] = false
-    for (i in 2..246912) {
+    for (i in 2..246912)
         if (prime[i])
             for (j in 2 * i..246912 step i) prime[j] = false
-    }
 
     while (true) {
         val next = Integer.parseInt(br.readLine())
