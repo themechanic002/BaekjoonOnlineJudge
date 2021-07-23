@@ -10,7 +10,6 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     while (true) {
-        var count = 0
         val next = Integer.parseInt(br.readLine())
         if (next == 0)
             break
