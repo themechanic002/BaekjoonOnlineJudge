@@ -10,12 +10,12 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
 
-    val prime: Array<Boolean> = Array(123456) { true }
+    val prime: Array<Boolean> = Array(246913) { true }
     prime[0] = false
     prime[1] = false
-    for (i in 2..123456) {
+    for (i in 2..246912) {
         if (prime[i])
-            for (j in 2 * i..1000 step i) prime[i] = false
+            for (j in 2 * i..246912 step i) prime[j] = false
     }
 
     while (true) {
