@@ -10,12 +10,11 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
-    val arr = ArrayList<Int>()
-    br.readLine().split(" ").map { it.toInt() }.forEach { arr.add(it) }
+    val set = HashSet<Int>()
+    br.readLine().split(" ").map { it.toInt() }.forEach { set.add(it) }
     val m = Integer.parseInt(br.readLine())
-    val targets = ArrayList<Int>()
     br.readLine().split(" ").map { it.toInt() }.forEach {
-        if(arr.contains(it))
+        if (set.contains(it))
             bw.write("1\n")
         else
             bw.write("0\n")
