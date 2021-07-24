@@ -9,10 +9,10 @@ import java.io.OutputStreamWriter
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val n = Integer.parseInt(br.readLine())
+    br.readLine()
     val set = HashSet<Int>()
     br.readLine().split(" ").map { it.toInt() }.forEach { set.add(it) }
-    val m = Integer.parseInt(br.readLine())
+    br.readLine()
     br.readLine().split(" ").map { it.toInt() }.forEach {
         if (set.contains(it))
             bw.write("1\n")
