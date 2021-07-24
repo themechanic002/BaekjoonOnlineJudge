@@ -13,7 +13,12 @@ fun main() {
     val arr = ArrayList<Int>()
     br.readLine().split(" ").map { it.toInt() }.forEach { arr.add(it) }
     val m = Integer.parseInt(br.readLine())
-    for(i in 0 until m){
-
+    val targets = ArrayList<Int>()
+    br.readLine().split(" ").map { it.toInt() }.forEach {
+        if(arr.contains(it))
+            bw.write("1\n")
+        else
+            bw.write("0\n")
     }
+    bw.close()
 }
