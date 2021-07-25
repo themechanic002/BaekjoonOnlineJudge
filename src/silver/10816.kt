@@ -9,7 +9,7 @@ import java.io.OutputStreamWriter
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val n = Integer.parseInt(br.readLine())
+    br.readLine()
     val map = HashMap<Int, Int>()
     br.readLine().toString().split(" ").map { it.toInt() }.forEach {
         if (map.containsKey(it))
@@ -17,12 +17,12 @@ fun main() {
         else
             map.put(it, 1)
     }
-    Integer.parseInt(br.readLine())
+    br.readLine()
     br.readLine().toString().split(" ").map { it.toInt() }.forEach {
         if (map.containsKey(it))
             bw.write("${map.getValue(it)} ")
         else
-            bw.write("0")
+            bw.write("0 ")
     }
     bw.close()
 }
