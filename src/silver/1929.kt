@@ -12,5 +12,10 @@ fun main() {
     val m = line[0]
     val n = line[1]
     val arr : Array<Boolean> = Array(n + 1) {true}
-
+    for(i in 2 .. n){
+        if(arr[i])
+            for(j in i * 2 .. n step i)
+                arr[j] = false
+    }
+    
 }
