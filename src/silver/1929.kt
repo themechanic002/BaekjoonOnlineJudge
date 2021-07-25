@@ -8,4 +8,9 @@ import java.io.OutputStreamWriter
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
+    val line = br.readLine().toString().split(" ").map { it.toInt() }
+    val m = line[0]
+    val n = line[1]
+    val arr : Array<Boolean> = Array(n + 1) {true}
+
 }
