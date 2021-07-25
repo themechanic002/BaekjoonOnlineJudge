@@ -12,7 +12,11 @@ fun main() {
     val n = Integer.parseInt(br.readLine())
     val map = HashMap<Int, Int>()
     br.readLine().toString().split(" ").map { it.toInt() }.forEach {
+        if(map.containsKey(it)){
 
+        } else{
+
+        }
     }
 
 }
