@@ -12,17 +12,19 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     val arr = ArrayList<Int>()
-    for (i in 0 until n) {
+    for (i in 0 until n)
         arr.add(Integer.parseInt(br.readLine()))
-    }
     arr.sort()
     bw.write("${arr.average().roundToInt()}\n")
     bw.write("${arr[n / 2]}\n")
     val mode = arr.groupBy { it }.values.sortedWith(compareBy({ -it.size }, { it.first() }))
+    println(mode)
     if (mode.size == 1)
-        bw.write("${mode.get(0).first()}\n")
+        bw.write("${mode[0].first()}\n")
+    else if (mode.get(0).size == mode.get(1).size)
+        bw.write("${mode[1].first()}\n")
     else
-        bw.write("${mode.get(1).first()}\n")
-    bw.write("${arr.last() - arr.first()}")
+        bw.write("${mode[0].first()}\n")
+    bw.write("${arr.last() - arr.first()}\n")
     bw.close()
 }
