@@ -12,13 +12,13 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
     val arr = ArrayList<Int>()
-    for(i in 0 until n) {
+    for (i in 0 until n) {
         arr.add(Integer.parseInt(br.readLine()))
     }
     arr.sort()
     bw.write("${arr.average().roundToInt()}\n")
     bw.write("${arr[n / 2]}\n")
-    bw.write("${arr.groupBy { it }.values.sortedWith(compareBy({-it.size}, {it.first()})).get(1).first()}\n")
+    bw.write("${arr.groupBy { it }.values.sortedWith(compareBy({ -it.size }, { it.first() })).get(1).first()}\n")
     bw.write("${arr.last() - arr.first()}")
     bw.close()
 }
