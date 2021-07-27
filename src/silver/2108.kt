@@ -16,9 +16,17 @@ fun main() {
         arr.add(Integer.parseInt(br.readLine()))
     }
     arr.sort()
-    bw.write("${arr.average()}\n")
+    val avg = arr.average()
+    if(avg >= avg.toInt() + 0.5)
+        if(avg < 0)
+            bw.write("${avg.toInt() - 1}\n")
+        else
+            bw.write("${avg.toInt() + 1}\n")
+    else
+        bw.write("${avg.toInt()}\n")
+
     bw.write("${arr[n / 2]}\n")
-    bw.write("${arr.groupBy { it }}")
+    bw.write("${arr.groupBy { it }}\n")
     bw.write("${arr.last() - arr.first()}")
     bw.close()
 }
