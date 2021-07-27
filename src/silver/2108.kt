@@ -10,20 +10,15 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
-    val arr = ArrayList<Pair<Int, Int>>()
+    val arr = ArrayList<Int>()
     var sum = 0
     for(i in 0 until n) {
-        val input = Integer.parseInt(br.readLine())
-        sum += input
-        arr.add(Pair(input, 1))
+        arr.add(Integer.parseInt(br.readLine()))
     }
-    arr.sortBy { it.first }
-    bw.write("${sum / n}")
-    bw.write("${arr[n/2].first}")
-    val max = arr[n - 1].first
-    val min = arr[0].first
-    arr.sortWith(compareBy({-it.second}, { it.first }))
-    bw.write("${arr[arr[0].second].first}")
-    bw.write("${max - min}")
+    arr.sort()
+    bw.write("${arr.average()}\n")
+    bw.write("${arr[n / 2]}\n")
+    bw.write("${arr.groupBy { it }}")
+    bw.write("${arr.last() - arr.first()}")
     bw.close()
 }
