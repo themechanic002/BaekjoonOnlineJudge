@@ -18,7 +18,11 @@ fun main() {
     arr.sort()
     bw.write("${arr.average().roundToInt()}\n")
     bw.write("${arr[n / 2]}\n")
-    bw.write("${arr.groupBy { it }.values.sortedWith(compareBy({ -it.size }, { it.first() })).get(1).first()}\n")
+    val mode = arr.groupBy { it }.values.sortedWith(compareBy({ -it.size }, { it.first() }))
+    if (mode.size == 1)
+        bw.write("${mode.get(0).first()}\n")
+    else
+        bw.write("${mode.get(1).first()}\n")
     bw.write("${arr.last() - arr.first()}")
     bw.close()
 }
