@@ -14,5 +14,6 @@ fun main() {
     for(i in 0 until n)
         list.add(br.readLine().toString())
     list.sortWith(compareBy ({it.length},{it}))
-
+    list.forEach { bw.write("$it\n") }
+    bw.close()
 }
