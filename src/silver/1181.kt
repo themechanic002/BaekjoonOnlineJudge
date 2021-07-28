@@ -10,10 +10,10 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
-    val list = ArrayList<String>()
+    val set = HashSet<String>()
     for (i in 0 until n)
-        list.add(br.readLine().toString())
-    list.sortWith(compareBy({ it.length }, { it }))
+        set.add(br.readLine().toString())
+    val list = set.toList().sortedWith(compareBy({ it.length }, { it }))
     list.forEach { bw.write("$it\n") }
     bw.close()
 }
