@@ -13,7 +13,6 @@ fun main() {
     val set = HashSet<String>()
     for (i in 0 until n)
         set.add(br.readLine().toString())
-    val list = set.toList().sortedWith(compareBy({ it.length }, { it }))
-    list.forEach { bw.write("$it\n") }
+    set.toList().sortedWith(compareBy({ it.length }, { it })).forEach { bw.write("$it\n") }
     bw.close()
 }
