@@ -18,7 +18,6 @@ fun main() {
     bw.write("${arr.average().roundToInt()}\n")
     bw.write("${arr[n / 2]}\n")
     val mode = arr.groupBy { it }.values.sortedWith(compareBy({ -it.size }, { it.first() }))
-    println(mode)
     if (mode.size == 1)
         bw.write("${mode[0].first()}\n")
     else if (mode.get(0).size == mode.get(1).size)
