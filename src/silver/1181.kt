@@ -13,5 +13,6 @@ fun main() {
     val list = ArrayList<String>()
     for(i in 0 until n)
         list.add(br.readLine().toString())
+    list.sortWith(compareBy ({it.length},{it}))
 
 }
