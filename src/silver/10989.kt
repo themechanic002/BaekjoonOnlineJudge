@@ -11,7 +11,7 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val arr = ArrayList<Int>()
     for (i in 0 until Integer.parseInt(br.readLine()))
-        arr.sort()
-    arr.forEach { bw.write("$it\n") }
+        arr.add(Integer.parseInt(br.readLine()))
+    arr.sorted().forEach { bw.write("$it\n") }
     bw.close()
 }
