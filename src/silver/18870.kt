@@ -11,17 +11,13 @@ fun main() {
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     br.readLine()
     val map = HashMap<Int, Int>()
-    val arr = br.readLine().split(" ").map { it.toInt() }.toIntArray()
-    val origArr = arr.clone()
-    arr.sort()
+    val origArr = br.readLine().split(" ").map { it.toInt() }.toIntArray()
+    val arr = origArr.sorted()
 
     var count = 0
-    for (i in arr) {
-        if (!map.containsKey(i)) {
-            map.put(i, count)
-            count++
-        }
-    }
+    for (i in arr)
+        if (!map.containsKey(i))
+            map[i] = count++
 
     for (i in origArr)
         bw.write("${map[i]} ")
