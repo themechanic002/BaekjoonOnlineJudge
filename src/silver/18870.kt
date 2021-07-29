@@ -10,10 +10,21 @@ fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
     val n = Integer.parseInt(br.readLine())
-    val set = HashSet<Pair<Int, Int>>()
-    val arr = IntArray(n)
-    val tmp = br.readLine().split(" ")
-    for(i in 0 until n)
-        arr[i] = tmp[i].toInt()
+    val map = HashMap<Int, Int>()
+    val arr = br.readLine().split(" ").map { it.toInt() }.toIntArray()
+    val origArr = arr.clone()
+    arr.sort()
+
+    var count = 0
+    for(i in arr){
+        if(!map.containsKey(i)){
+            map.put(i, count)
+            count++
+        }
+    }
+
+    for(i in origArr){
+        bw.write("${map[i]} ")
+    }
 
 }
