@@ -25,4 +25,5 @@ fun main() {
 
     for (i in origArr)
         bw.write("${map[i]} ")
+    bw.close()
 }
