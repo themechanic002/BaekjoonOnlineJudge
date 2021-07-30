@@ -17,17 +17,13 @@ fun main() {
     for (i in 1..line.lastIndex) {
         var a = line[i]
         var b = standard
-        if (a == b)
-            bw.write("1/1\n")
-        else {
-            var gcd = findingGCD(a, b)
-            while (gcd != 1) {
-                a /= gcd
-                b /= gcd
-                gcd = findingGCD(a, b)
-            }
-            bw.write("$b/$a\n")
+        var gcd = findingGCD(a, b)
+        while (gcd != 1) {
+            a /= gcd
+            b /= gcd
+            gcd = findingGCD(a, b)
         }
+        bw.write("$b/$a\n")
     }
     bw.close()
 }
