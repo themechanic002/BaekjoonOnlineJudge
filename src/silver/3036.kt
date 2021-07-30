@@ -22,16 +22,17 @@ fun main() {
     arr.forEach {
         var a = it
         var b = standard
-        var gcd: Int
         if (a == b)
-            gcd = 1
-        else gcd = findingGCD(a, b)
-        while (gcd != 1) {
-            a /= gcd
-            b /= gcd
-            gcd = findingGCD(a, b)
+            bw.write("1/1\n")
+        else {
+            var gcd = findingGCD(a, b)
+            while (gcd != 1) {
+                a /= gcd
+                b /= gcd
+                gcd = findingGCD(a, b)
+            }
+            bw.write("$b/$a\n")
         }
-        bw.write("$b/$a\n")
     }
     bw.close()
 }
