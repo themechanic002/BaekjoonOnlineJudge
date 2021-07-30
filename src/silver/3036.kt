@@ -11,19 +11,22 @@ import java.lang.Math.min
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
-    val n = Integer.parseInt(br.readLine())
+    br.readLine()
     val arr = ArrayList<Int>()
     val line = br.readLine().split(" ").map { it.toInt() }
     val standard = line[0]
     line.forEach {
-        if(line.indexOf(it) > 0)
+        if (line.indexOf(it) > 0)
             arr.add(it)
     }
     arr.forEach {
         var a = it
         var b = standard
-        var gcd = findingGCD(a, b)
-        while(gcd != 1){
+        var gcd: Int
+        if (a == b)
+            gcd = 1
+        else gcd = findingGCD(a, b)
+        while (gcd != 1) {
             a /= gcd
             b /= gcd
             gcd = findingGCD(a, b)
@@ -31,13 +34,12 @@ fun main() {
         bw.write("$b/$a\n")
     }
     bw.close()
-
 }
 
 fun findingGCD(a: Int, b: Int): Int {
-    var maximum = max(a, b)
-    var minimum = min(a, b)
+    val maximum = max(a, b)
+    val minimum = min(a, b)
 
-    if (minimum == 0) return max(a, b)
-    else return findingGCD(minimum, maximum % minimum)
+    return if (minimum == 0) max(a, b)
+    else findingGCD(minimum, maximum % minimum)
 }
