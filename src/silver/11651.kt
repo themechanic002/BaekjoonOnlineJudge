@@ -13,5 +13,5 @@ fun main() {
     val arr = ArrayList<List<Int>>()
     for(i in 0 until n)
         arr.add(br.readLine().split(" ").map { it.toInt() })
-
+    arr.sortedWith(compareBy ({it[1]}, {it[0]})).forEach { bw.write("${it[0]} ${it[1]}") }
 }
