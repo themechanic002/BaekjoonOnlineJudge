@@ -15,4 +15,5 @@ fun main() {
         list.add(br.readLine().split(" "))
     }
     list.sortedBy { it[0].toInt() }.forEach { bw.write("${it[0]} ${it[1]}\n") }
+    bw.close()
 }
