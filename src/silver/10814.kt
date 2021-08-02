@@ -9,4 +9,10 @@ import java.io.OutputStreamWriter
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
     val bw = BufferedWriter(OutputStreamWriter(System.out))
+    val n = Integer.parseInt(br.readLine())
+    val list = ArrayList<List<String>>()
+    for(i in 0 until n){
+        list.add(br.readLine().split(" "))
+    }
+
 }
